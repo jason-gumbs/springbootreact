@@ -8,27 +8,15 @@ import * as API from "../utils/API";
 
 
 class OmdbContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.handleResultChange = this.handleResultChange.bind(this);
-    this.state = {
+ 
+    state = {
     username:"",
     password:"",
     result:""
   };
-  }
-  // When this component mounts, search for the movie "The Matrix"
-  componentDidMount() {
-   
-  }
-  handleResultChange(result) {
-    this.setState({result});
-  }
-
- 
+  
 
   handleInputChange = event => {
-    
     const value = event.target.value;
     const name = event.target.name;
     this.setState({
@@ -82,7 +70,6 @@ class OmdbContainer extends Component {
           <Col size="md-4" className="m-auto">
             <Panel heading="Sign up/Login">
               <Search
-               
                 handleInputChange={this.handleInputChange}
                 handleFormSubmit={this.handleFormSubmit}
                 handleloginSubmit={this.handleloginSubmit}
