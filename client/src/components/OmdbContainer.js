@@ -85,7 +85,7 @@ class OmdbContainer extends Component {
                
                 handleInputChange={this.handleInputChange}
                 handleFormSubmit={this.handleFormSubmit}
-                handleloginSubmit={this.handleloginSubmit}
+                
               />
         <div id= "result">
         </div>
