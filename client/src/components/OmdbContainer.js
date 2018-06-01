@@ -72,7 +72,7 @@ class OmdbContainer extends Component {
               <Search
                 handleInputChange={this.handleInputChange}
                 handleFormSubmit={this.handleFormSubmit}
-                handleloginSubmit={this.handleloginSubmit}
+                
               />
         <div id= "result">
         </div>
