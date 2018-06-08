@@ -4,6 +4,7 @@ import com.example.demo.dao.UserDao;
 import com.example.demo.model.User;
 
 
+import com.example.demo.model.User;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
