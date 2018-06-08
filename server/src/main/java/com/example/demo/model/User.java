@@ -1,7 +1,9 @@
 package com.example.demo.model;
 
 
-//@Entity
+import javax.persistence.Entity;
+
+@Entity
 public class User {
 	
 	private String username;
