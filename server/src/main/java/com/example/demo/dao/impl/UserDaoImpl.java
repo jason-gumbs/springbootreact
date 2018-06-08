@@ -1,60 +1,50 @@
 package com.example.demo.dao.impl;
 
 import com.example.demo.dao.UserDao;
+import com.example.demo.exception.ResourceNotFound;
 import com.example.demo.model.User;
 
 
-import com.example.demo.model.User;
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
+import com.example.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityManager;
 import java.util.List;
 
 @Repository
 @Transactional
 public class UserDaoImpl implements UserDao {
 
-        @Autowired
-        private SessionFactory sessionFactory;
+    @Autowired
+    UserRepository userRepository;
 
-        public User getUserById (int id) {
-            Session session = sessionFactory.getCurrentSession();
-            User user = (User) session.get(User.class, id);
-            session.flush();
-
-            return user;
+        public User getUserById (Long id) {
+            return userRepository.findById(id)
+                    .orElseThrow(() -> new ResourceNotFound("User", "id", id));
         }
 
 
         public List<User> getUserList() {
-            Session session = sessionFactory.getCurrentSession();
-            Query query = session.createQuery("from User");
-            List<User> userList = query.list();
-            session.flush();
 
-            return userList;
+            return userRepository.findAll();
         }
 
         public void addUser (User user) {
-            Session session = sessionFactory.getCurrentSession();
-            session.saveOrUpdate(user);
-            session.flush();
+
+            userRepository.save(user);
+
         }
 
         public void editUser (User user) {
-            Session session = sessionFactory.getCurrentSession();
-            session.saveOrUpdate(user);
-            session.flush();
+
+            userRepository.save(user);
+
         }
 
         public void deleteUser (User user) {
-            Session session = sessionFactory.getCurrentSession();
-            session.delete(user);
-            session.flush();
+            userRepository.delete(user);
         }
     }
 

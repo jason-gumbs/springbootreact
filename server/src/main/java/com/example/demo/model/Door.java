@@ -1,15 +1,19 @@
 package com.example.demo.model;
 
+
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.Objects;
 
 
 @Entity
 public class Door {
 
-
+    @Id
+    @GeneratedValue
     public Integer id;
-
     public String name;
 
     public Door() {}
