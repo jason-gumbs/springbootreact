@@ -2,6 +2,8 @@ package com.example.demo.model;
 
 import java.util.Objects;
 
+
+//@Entity
 public class Door {
 
 
