@@ -3,6 +3,7 @@ package com.example.demo.dao.impl;
 import com.example.demo.dao.UserDao;
 import java.util.List;
 
+import com.example.demo.model.User;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -17,38 +18,38 @@ public class UserDaoImpl implements UserDao {
         @Autowired
         private SessionFactory sessionFactory;
 
-        public Event getUserById (int id) {
+        public User getUserById (int id) {
             Session session = sessionFactory.getCurrentSession();
-            Event event = (Event) session.get(Event.class, id);
+            User user = (User) session.get(User.class, id);
             session.flush();
 
-            return event;
+            return user;
         }
 
         public List<User> getUserList() {
             Session session = sessionFactory.getCurrentSession();
             Query query = session.createQuery("from User");
-            List<Event> eventList = query.list();
+            List<User> userList = query.list();
             session.flush();
 
-            return eventList;
+            return userList;
         }
 
-        public void addEvent (Event event) {
+        public void addUser (User user) {
             Session session = sessionFactory.getCurrentSession();
-            session.saveOrUpdate(event);
-            session.flush();
-        }
-
-        public void editEvent (Event event) {
-            Session session = sessionFactory.getCurrentSession();
-            session.saveOrUpdate(event);
+            session.saveOrUpdate(user);
             session.flush();
         }
 
-        public void deleteEvent (Event event) {
+        public void editUser (User user) {
             Session session = sessionFactory.getCurrentSession();
-            session.delete(event);
+            session.saveOrUpdate(user);
+            session.flush();
+        }
+
+        public void deleteUser (User user) {
+            Session session = sessionFactory.getCurrentSession();
+            session.delete(user);
             session.flush();
         }
     }
