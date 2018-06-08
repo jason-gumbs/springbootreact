@@ -1,9 +1,10 @@
 package com.example.demo.model;
 
+import javax.persistence.Entity;
 import java.util.Objects;
 
 
-//@Entity
+@Entity
 public class Door {
 
 
