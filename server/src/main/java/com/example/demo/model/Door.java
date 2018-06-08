@@ -8,15 +8,13 @@ import javax.persistence.Id;
 import java.util.Objects;
 
 
-@Entity
+//@Entity
 public class Door {
 
     @Id
     @GeneratedValue
     public Integer id;
     public String name;
-
-    public Door() {}
 
     public Door(Integer id, String name) {
         this.id = id;
