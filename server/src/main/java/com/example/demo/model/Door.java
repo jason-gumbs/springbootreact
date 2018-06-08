@@ -1,18 +1,19 @@
 package com.example.demo.model;
 
+import org.springframework.data.annotation.Id;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import java.util.Objects;
 
 
-@Entity
+//@Entity
 public class Door {
 
-
+    @Id
+    @GeneratedValue
     public Integer id;
-
     public String name;
-
-    public Door() {}
 
     public Door(Integer id, String name) {
         this.id = id;
