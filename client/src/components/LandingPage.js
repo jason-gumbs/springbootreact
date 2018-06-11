@@ -27,9 +27,7 @@ export default class LandingPage extends Component {
           <Modal open={open} onClose={ this.onCloseModal } little>
           <h1>Welcome To Doors Warehouse</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-            pulvinar risus non risus hendrerit venenatis. Pellentesque sit amet
-            hendrerit risus, sed porttitor quam.
+            Random words go here in the  modal.
           </p>
         </Modal>
         <div>
