@@ -44,11 +44,16 @@ public class DoorController {
 
     @PutMapping("/door/{id}")
     public Door updateDoor(@PathVariable("id") Long id, @RequestBody Door door) {
+<<<<<<< HEAD
 
         door.setId(id);
         return repository.save( door);
 
 
 
+=======
+        door.setId(id);
+        return repository.save(door);
+>>>>>>> d3a407c6b9985b1923168b75aa7387d4de5de05a
     }
 }
