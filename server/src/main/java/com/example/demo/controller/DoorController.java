@@ -45,10 +45,7 @@ public class DoorController {
     @PutMapping("/door/{id}")
     public Door updateDoor(@PathVariable("id") Long id, @RequestBody Door door) {
 
-    Optional selectDoor = repository.findById(id);
-        System.out.println("doorById" + selectDoor.toString());
         door.setId(id);
-//        door.setName(door.getName());
         return repository.save( door);
 
 
