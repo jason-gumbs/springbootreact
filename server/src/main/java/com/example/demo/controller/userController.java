@@ -4,12 +4,14 @@ package com.example.demo.controller;
 import com.example.demo.model.User;
 import com.example.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Optional;
 
 
 @RestController
@@ -30,30 +32,22 @@ public class userController {
     @PostMapping("/user/new")
     public User createUsers(@RequestBody User user) {
 
+        List<User> userList = new LinkedList<User>();
+        for (User e : repository.findAll()) {
+            userList.add(e);
+        }
+
+        for (int i = 0; i < userList.size(); i++) {
+            if (user.getUsername().equals(userList.get(i).getUsername()) && user.getUsername().equals(userList.get(i).getPassword())) {
+                System.out.println("username/ password exist");
+                return null;
+            }
+
+        }
+
         return repository.save(user);
-
-    }
-    @GetMapping("/User/{id}")
-    public Optional<User> getUserById(@PathVariable("id") Long id){
-        Optional<User> user = this.repository.findById(id);
-        return user;
     }
 
-    @DeleteMapping("/User/{id}")
-    public void deleteUser(@PathVariable("id") Long id){
-        this.repository.deleteById(id);
-    }
 
-    @PutMapping("/User/{id}")
-    public User updateUser(@PathVariable("id") Long id, @RequestBody User user) {
-
-        user.setId(id);
-        return repository.save( user);
-
-
-
-    }
 }
-
-
 
