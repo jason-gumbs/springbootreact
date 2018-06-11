@@ -13,8 +13,8 @@ class App extends Component {
             <Router>
                 <Switch>
                     <Route exact path="/" component={LoginPage} />
-                    {/* <Route exact path="/" component={LandingPage} />
-                    <Route exact path="/doors" component={DoorsList} />
+                     <Route exact path="/doors" component={LandingPage} />
+                    {/*<Route exact path="/doors" component={DoorsList} />
                     <Route exact path="/doors/create" component={Form} />
                     <Route exact path="/doors/:doorId" component={SingleDoor} /> */}
                 </Switch>
