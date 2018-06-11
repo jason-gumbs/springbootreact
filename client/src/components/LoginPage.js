@@ -1,10 +1,10 @@
 import React, { Component } from "react"
 import { Redirect } from 'react-router-dom'
-import Container from "./Container"
-import Row from "./Row"
-import Col from "./Col"
-import Panel from "./Panel"
-import Search from "./Search"
+import Container from "./loginComponents/Container"
+import Row from "./loginComponents/Row"
+import Col from "./loginComponents/Col"
+import Panel from "./loginComponents/Panel"
+import Search from "./loginComponents/Search"
 import * as API from "../utils/API"
 
 
