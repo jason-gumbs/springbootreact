@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import LoginPage from "./components/LoginPage";
 import LandingPage from "./components/LandingPage"
+import DoorsList from "./components/DoorsList"
+import Door from "./components/Door"
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 
@@ -15,9 +17,9 @@ class App extends Component {
                 <Switch>
                     <Route exact path="/" component={LoginPage} />
                      <Route exact path="/doors" component={LandingPage} />
-                    {/*<Route exact path="/doors" component={DoorsList} />
-                    <Route exact path="/doors/create" component={Form} />
-                    <Route exact path="/doors/:doorId" component={SingleDoor} /> */}
+                    <Route exact path="/doorlist" component={DoorsList} />
+                   {/* <Route exact path="/doors/create" component={Form} />*/}
+                    <Route exact path="/doors/:doorId" component={Door} /> 
                 </Switch>
             </Router>
             </div>

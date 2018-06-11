@@ -5,7 +5,6 @@ import Modal from "react-responsive-modal";
 export default class LandingPage extends Component {
 
     state = {
-        
         open:false
        }
 
@@ -21,7 +20,6 @@ export default class LandingPage extends Component {
   render() {
     const { open } = this.state
 
-
     return (
       <div>
           <h1 className="App-title"> Home Depot</h1>
@@ -34,6 +32,19 @@ export default class LandingPage extends Component {
             hendrerit risus, sed porttitor quam.
           </p>
         </Modal>
+        <div>
+        <a href="/doorlist">
+          <button>
+            View Doors
+          </button>
+          </a>
+
+        </div>
+
+        <div>
+
+        </div>
+
         
       </div>
     )
