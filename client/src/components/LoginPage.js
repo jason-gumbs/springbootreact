@@ -32,6 +32,7 @@ export default class LoginPage extends Component {
     console.log("hey")
     API.createUser({  username: this.state.username,
       password: this.state.password})
+      const {LoggedIn} = this.state
       .then(res => {
         if(!res.data){
           document.getElementById("result").innerHTML = "<p>username exist</p>"
@@ -39,13 +40,14 @@ export default class LoginPage extends Component {
         }else{
           document.getElementById("result").innerHTML = "<p >thank you are all signed up</p>"
          //swal(`thank you are all signed up`)
-         
+         this.setState({LoggedIn})
          }
  }) 
  .catch(err => console.log(err))
  }
 
  handleloginSubmit = event => {
+   const {LoggedIn} = this.state
   event.preventDefault()
   console.log("raqqq")
   API.login({  username: this.state.username,
