@@ -20,7 +20,7 @@ const api = ``
 
   }
 
-  export const getDoor = (doorId) => {
+  export const getDoor = () => {
   const doorId = this.props.match.params.doorId
   console.log('grab individual door function')
   return axios.get(api + "/"+ doorId )
