@@ -49,7 +49,6 @@ export default class LoginPage extends Component {
   handleloginSubmit = event => {
     const { LoggedIn } = this.state
     event.preventDefault()
-    console.log("raqqq")
     API.login({
       username: this.state.username,
       password: this.state.password
@@ -58,7 +57,7 @@ export default class LoginPage extends Component {
         if (!res.data) {
           document.getElementById("result").innerHTML = "<p>wrong username/password</p>"
         } else {
-          document.getElementById("result").innerHTML = "<p>`you are loged in</p>"
+          document.getElementById("result").innerHTML = "<p>`you are logged in</p>"
           this.setState({ LoggedIn })
         }
       }).catch(err => console.log(err))
