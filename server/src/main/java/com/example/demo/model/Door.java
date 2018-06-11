@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import java.util.Objects;
 
 
-//@Entity
+@Entity
 public class Door {
 
     @Id

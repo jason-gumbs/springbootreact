@@ -1,23 +1,22 @@
 package com.example.demo.model;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
 
 import javax.persistence.*;
 
+
 @Entity
-@Table(name = "user")
-@EntityListeners(AuditingEntityListener.class)
-@JsonIgnoreProperties(value = {"createdAt", "updatedAt"},
-		allowGetters = true)
 public class User {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	private String username;
 	private String password;
+
+	protected User() {}
+
 
 	public User(String username, String password) {
 		this.username = username;
@@ -49,11 +48,12 @@ public class User {
 	}
 
 
-
-
-
-
-
-	
-	
+	@Override
+	public String toString() {
+		return "User{" +
+				"id=" + id +
+				", username='" + username + '\'' +
+				", password='" + password + '\'' +
+				'}';
+	}
 }
