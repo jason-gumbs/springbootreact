@@ -13,7 +13,7 @@ export default class DoorsList extends Component {
             if (response.status === !200) {
                 window.alert('Error: Server is down!!', response.data.error)
             } else {
-                this.setState({ doors })
+                // this.setState({ doors })
             }
         })
     }
