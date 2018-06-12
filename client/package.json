@@ -1,10 +1,12 @@
 {
+  "proxy": "http://localhost:8080",
   "name": "solved",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "dependencies": {
     "axios": "^0.18.0",
+    "proxy": "^0.2.4",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-responsive-modal": "^3.0.3",
